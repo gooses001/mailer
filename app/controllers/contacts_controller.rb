@@ -21,7 +21,6 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-
     respond_to do |format|
       if @contact.save
         ContactMailer.contact_mail(@contact).deliver
